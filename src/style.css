@@ -1,0 +1,11 @@
+h1, p {
+  font-family: Lato;
+}
+
+.start{
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 50px 10px;
+  min-height: 200px;
+  text-align: center;
+}
