@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 
-export default class Options extends React.Component {
+export default class Options extends Component {
 
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ export default class Options extends React.Component {
     let div = options.map(option => (
       <label className="optionLabel" key={option.value}>
         <input type="radio" name="radio-button-group" {...option} onClick={this.handleChange} />
-        <img src={option.url} />
+        <img src={option.url} alt={option.url}/>
         <br />
         {option.value}
       </label>
@@ -25,10 +25,10 @@ export default class Options extends React.Component {
   }
 
   handleChange = (event) => {
-    if (this.props.type == "user") {
+    if (this.props.type === "user") {
       this.handleUserChange(event);
     }
-    if (this.props.type == "creator") {
+    if (this.props.type === "creator") {
       this.handleCreatorChange(event);
     }
   }

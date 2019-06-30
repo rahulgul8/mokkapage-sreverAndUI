@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Options from './Options';
 
-class Question extends React.Component {
+class Question extends Component {
 
   constructor(props) {
     super(props);
@@ -13,10 +13,10 @@ class Question extends React.Component {
   }
 
   handleChange = (event) => {
-    if (this.props.type == "user") {
+    if (this.props.type === "user") {
       this.handleUserChange(event);
     }
-    if (this.props.type == "creator") {
+    if (this.props.type === "creator") {
       this.handleCreatorChange(event);
     }
   }
@@ -33,7 +33,6 @@ class Question extends React.Component {
 
 
   render() {
-    const items = [];
     return (
       <form>
         <div>

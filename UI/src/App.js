@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -48,26 +47,28 @@ export default class App extends Component {
     switch (page) {
       case 'quiz': break;
       case 'start': this.setState({ page: "quiz", name: e.name }); break;
-      case 'end': {
+      case 'end':
         this.setState({ page: "end" });
         console.log(e.selectedQuestions)
-      }; break;
+          ; break;
+      default: throw new Error();
     }
   };
 
   getPage(page) {
     switch (page) {
-      case 'start': return <StartPage name={this.state.name} updateState={this.updateState}></StartPage>; break;
-      case 'quiz': return <CreatorPage name={this.state.name} updateState={this.updateState} questions={this.state.questions}></CreatorPage>; break;
-      case 'end': return <SharePage domain="http://oorga.co/fancywish?name=" quizId={this.getKey()} name={this.state.name} updateState={this.updateState}></SharePage>; break;
+      case 'start': return <StartPage name={this.state.name} updateState={this.updateState}></StartPage>;
+      case 'quiz': return <CreatorPage name={this.state.name} updateState={this.updateState} questions={this.state.questions}></CreatorPage>;
+      case 'end': return <SharePage domain="http://oorga.co/fancywish?name=" quizId={this.getKey()} name={this.state.name} updateState={this.updateState}></SharePage>;
       case 'user':
-        this.state.questions = this.state.questions.map(q => {
+        var quustions = this.state.questions.map(q => {
           q.answer = 'text1';
           return q;
         });
+        this.setState({ questions: quustions });
         return <UserPage questions={this.state.questions} updateState={this.updateState}></UserPage>;
-        break;
       case 'result': return <Result></Result>;
+      default: throw new Error();
     }
   }
 

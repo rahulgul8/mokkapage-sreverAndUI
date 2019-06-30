@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Question from './Question';
 import './pagestyle.css';
-export default class Page extends React.Component {
+export default class Page extends Component {
 
   constructor(props) {
     super(props);
@@ -40,10 +40,10 @@ export default class Page extends React.Component {
   }
 
   handleChange(event) {
-    if (this.props.type == "user") {
+    if (this.props.type === "user") {
       this.handleUserChange(event);
     }
-    if (this.props.type == "creator") {
+    if (this.props.type === "creator") {
       this.handleCreatorChange(event);
     }
   }
@@ -69,7 +69,7 @@ export default class Page extends React.Component {
 
   incrementQuestion() {
     if (this.count > this.state.currentQuestion) {
-      this.setState({ currentQuestion: ++this.state.currentQuestion });
+      this.setState({ currentQuestion: this.state.currentQuestion + 1 });
     }
     else {
       this.props.updateState({ page: 'end' });
@@ -79,7 +79,7 @@ export default class Page extends React.Component {
 
   incrementSkippedQuestion() {
     if (this.props.questions.length > this.state.selectedIndex)
-      this.setState({ selectedIndex: ++this.state.selectedIndex });
+      this.setState({ selectedIndex: this.state.selectedIndex + 1 });
     else {
       this.setState({ selectedIndex: 1 });
     }
@@ -87,7 +87,7 @@ export default class Page extends React.Component {
 
   calculateUserResult(event) {
     if (event.result) {
-      this.setState({ correctAnswer: ++this.state.correctAnswer });
+      this.setState({ correctAnswer: this.state.correctAnswer+1 });
     }
   }
 }
