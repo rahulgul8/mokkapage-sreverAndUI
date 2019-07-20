@@ -14,6 +14,5 @@ exports.getQuestions = async function () {
     } catch (e) {
         return e;
     }
-    console.log(stuff)
     return stuff;
 }
