@@ -19,10 +19,14 @@ export default class App extends Component {
     };
   }
 
+  locahost = "http://localhost:5001/mokkapage/us-central1/app";
+  host = "https://us-central1-mokkapage.cloudfunctions.net/app";
+
   componentDidMount() {
-    fetch('https://5cfdeb3aca949b00148d3992.mockapi.io/mokka/quiz/questions')
+    fetch(this.locahost + '/getquestions')
       .then(res => res.json())
       .then((data) => {
+        console.log(data)
         this.setState({ questions: data });
         this.loadImages(data);
       })
