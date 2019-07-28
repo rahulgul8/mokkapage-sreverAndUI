@@ -5,13 +5,15 @@ export default class StartPage extends Component {
 
   constructor(props) {
     super(props);
+    var name = localStorage.getItem("name");
     this.state = {
-      name: "",
+      name: name,
     };
   }
 
   handleChange = (e) => {
     this.setState({ name: e.target.value });
+    localStorage.setItem("name", e.target.value);
   }
 
   updateState = (e) => {

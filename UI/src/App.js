@@ -15,15 +15,15 @@ export default class App extends Component {
     this.state = {
       name: '',
       questions: [],
-      page: "result"
+      page: "start"
     };
   }
 
-  locahost = "http://localhost:5001/mokkapage/us-central1/app";
+  locahost = "http://localhost:5000/mokkapage/us-central1/app";
   host = "https://us-central1-mokkapage.cloudfunctions.net/app";
 
   componentDidMount() {
-    fetch(this.locahost + '/getquestions')
+    fetch(this.host + '/getquestions')
       .then(res => res.json())
       .then((data) => {
         console.log(data)
@@ -52,12 +52,44 @@ export default class App extends Component {
       case 'quiz': break;
       case 'start': this.setState({ page: "quiz", name: e.name }); break;
       case 'end':
-        this.setState({ page: "end" });
-        console.log(e.selectedQuestions)
-          ; break;
+        this.updateServer('/player/response/add', 'POST', { name: localStorage.getItem("name"), quiz: e.selectedQuestions })
+          .then(resp => {
+            debugger
+            console.log(resp);
+            return resp.json();
+          })
+          .then((response) => {
+            this.setState({ quizId: response.id, page: "end" });
+            console.log(response.id);
+          });
+        ; break;
       default: throw new Error();
     }
   };
+
+  async updateServer(url, method, data) {
+
+    try {
+      var data = await fetch(this.host + url, {
+        method: method,
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (data.status >= 200 && data.status < 300) {
+        return data;
+      } else {
+        console.log('Somthing happened wrong');
+        return false;
+      }
+    }
+    catch (e) {
+      console.log(e);
+      return false;
+    }
+  }
 
   getPage(page) {
     switch (page) {
@@ -77,7 +109,7 @@ export default class App extends Component {
   }
 
   getKey() {
-    return 123;
+    return this.state.quizId;
   }
 
   render() {

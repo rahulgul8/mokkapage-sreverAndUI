@@ -12,7 +12,7 @@ export default class Page extends Component {
     };
   }
 
-  count = 5;
+  count = 2;
 
   render() {
     let label = [];

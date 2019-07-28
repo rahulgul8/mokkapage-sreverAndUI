@@ -15,7 +15,7 @@ app.post('/player/response/add', async (req, res) => {
     console.log(req.body)
     var data = await dao.addPlayerResponse(req.body);
     if (data) {
-        res.send(data.id);
+        res.send({ id: data.id });
     }
     else {
         res.send(false);

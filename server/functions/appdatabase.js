@@ -2,7 +2,7 @@
 const admin = require('firebase-admin');
 const serviceAccount = require('./mokka.json');
 // admin.initializeApp(functions.config().firebase);
-admin.initializeApp({ credential: admin.credential.cert(serviceAccount),});
+admin.initializeApp({ credential: admin.credential.cert(serviceAccount), });
 const db = admin.firestore();
 
 exports.getQuestions = async function (lang) {
@@ -10,12 +10,22 @@ exports.getQuestions = async function (lang) {
     try {
         var data = await db.collection("/questions").get();
         data.forEach((doc) => {
-            stuff.push(doc.data());
+            var d = doc.data();
+            stuff.push(d);
         });
     } catch (e) {
         return e;
     }
     return stuff;
+}
+
+function exportAsArray(options) {
+    var list = [];
+    options.forEach((value, key) => {
+        var v = { value: key, url: value };
+        list.push(v);
+    });
+    return list;
 }
 
 exports.addPlayerResponse = async function (response) {
@@ -32,7 +42,8 @@ exports.addPlayerResponse = async function (response) {
 exports.getPlayerQuiz = async function (id) {
     var ref = await db.collection("/userResponse").doc(id).get();
     if (ref.exists) {
-        return ref.data().quiz;
+        var data = ref.data();
+        return { "quiz": data.quiz, "name": data.name };
     } else {
         return false;
     }

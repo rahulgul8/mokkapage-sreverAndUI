@@ -26,7 +26,6 @@ class Question extends Component {
   }
 
   handleCreatorChange(event) {
-    debugger
     event.answer = event.target.value;
     this.props.handleChange(event);
   }
