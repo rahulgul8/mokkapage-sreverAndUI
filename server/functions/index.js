@@ -6,6 +6,7 @@ var cors = require('cors');
 const express = require('express');
 const app = express();
 app.use(cors());
+
 app.get('/getquestions', async (req, res) => {
     var result = await dao.getQuestions(req.query.lang);
     res.send(result);

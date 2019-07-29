@@ -8,6 +8,8 @@ import SharePage from './component/SharePage'
 import UserPage from './component/UserPage'
 import Result from './component/Result'
 
+
+
 export default class App extends Component {
 
   constructor() {
@@ -15,7 +17,7 @@ export default class App extends Component {
     this.state = {
       name: '',
       questions: [],
-      page: "start"
+      page: 'start'
     };
   }
 
@@ -23,12 +25,18 @@ export default class App extends Component {
   host = "https://us-central1-mokkapage.cloudfunctions.net/app";
 
   componentDidMount() {
-    fetch(this.host + '/getquestions')
+    var url = '/getquestions';
+    if (this.props.param) {
+      url = '/player/response/get?id=' + this.props.param;
+      this.setState({ page: 'user' });
+    }
+    fetch(this.host + url)
       .then(res => res.json())
       .then((data) => {
-        console.log(data)
-        this.setState({ questions: data });
-        this.loadImages(data);
+        console.log(data);
+        debugger;
+        this.setState({ questions: data.quiz });
+        this.loadImages(data.quiz);
       })
       .catch(console.log)
   }
@@ -54,7 +62,6 @@ export default class App extends Component {
       case 'end':
         this.updateServer('/player/response/add', 'POST', { name: localStorage.getItem("name"), quiz: e.selectedQuestions })
           .then(resp => {
-            debugger
             console.log(resp);
             return resp.json();
           })
@@ -70,7 +77,7 @@ export default class App extends Component {
   async updateServer(url, method, data) {
 
     try {
-      var data = await fetch(this.host + url, {
+      var resp = await fetch(this.host + url, {
         method: method,
         body: JSON.stringify(data),
         headers: {
@@ -78,8 +85,8 @@ export default class App extends Component {
         }
       });
 
-      if (data.status >= 200 && data.status < 300) {
-        return data;
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
       } else {
         console.log('Somthing happened wrong');
         return false;
@@ -97,11 +104,6 @@ export default class App extends Component {
       case 'quiz': return <CreatorPage name={this.state.name} updateState={this.updateState} questions={this.state.questions}></CreatorPage>;
       case 'end': return <SharePage domain="http://oorga.co/fancywish?name=" quizId={this.getKey()} name={this.state.name} updateState={this.updateState}></SharePage>;
       case 'user':
-        var quustions = this.state.questions.map(q => {
-          q.answer = 'text1';
-          return q;
-        });
-        this.setState({ questions: quustions });
         return <UserPage questions={this.state.questions} updateState={this.updateState}></UserPage>;
       case 'result': return <Result></Result>;
       default: throw new Error();
@@ -115,4 +117,7 @@ export default class App extends Component {
   render() {
     return <div className="jumbotron start">{this.getPage(this.state.page)}</div>;
   }
+
+
+
 }

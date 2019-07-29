@@ -16,7 +16,7 @@ exports.getQuestions = async function (lang) {
     } catch (e) {
         return e;
     }
-    return stuff;
+    return { quiz: stuff };
 }
 
 function exportAsArray(options) {
