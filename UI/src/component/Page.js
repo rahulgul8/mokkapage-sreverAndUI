@@ -72,7 +72,7 @@ export default class Page extends Component {
       this.setState({ currentQuestion: this.state.currentQuestion + 1 });
     }
     else {
-      this.props.updateState({ page: 'end' });
+      this.props.updateState({ page: 'end',score: this.state.correctAnswer });
     }
   }
 
