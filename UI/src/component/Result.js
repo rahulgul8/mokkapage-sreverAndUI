@@ -3,7 +3,8 @@ import './ResultPage.css'
 export default class Result extends Component {
 
   render() {
-    let rows = [{ name: 'rahul', score: 10 }, { name: 'Naisini', score: 10 }];
+    console.log(this.props.location.state);
+    let rows = this.props.location.state.response;
     return this.getTable(rows);
   }
 
