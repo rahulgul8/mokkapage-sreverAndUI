@@ -7,7 +7,7 @@ import StartPage from './component/StartPage'
 import SharePage from './component/SharePage'
 import UserPage from './component/UserPage'
 import Result from './component/Result'
-
+import Constant from './constants'
 
 
 export default class App extends Component {
@@ -60,7 +60,7 @@ export default class App extends Component {
       case 'quiz': break;
       case 'start': this.setState({ page: "quiz", name: e.name }); break;
       case 'end':
-        this.updateServer('/player/response/add', 'POST', { name: localStorage.getItem("name"), quiz: e.selectedQuestions })
+      Constant.updateServer('/player/response/add', 'POST', { name: localStorage.getItem("name"), quiz: e.selectedQuestions })
           .then(resp => {
             console.log(resp);
             return resp.json();
@@ -74,35 +74,13 @@ export default class App extends Component {
     }
   };
 
-  async updateServer(url, method, data) {
 
-    try {
-      var resp = await fetch(this.host + url, {
-        method: method,
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-
-      if (resp.status >= 200 && resp.status < 300) {
-        return resp;
-      } else {
-        console.log('Somthing happened wrong');
-        return false;
-      }
-    }
-    catch (e) {
-      console.log(e);
-      return false;
-    }
-  }
 
   getPage(page) {
     switch (page) {
       case 'start': return <StartPage name={this.state.name} updateState={this.updateState}></StartPage>;
       case 'quiz': return <CreatorPage name={this.state.name} updateState={this.updateState} questions={this.state.questions}></CreatorPage>;
-      case 'end': return <SharePage domain="http://oorga.co/fancywish?name=" quizId={this.getKey()} name={this.state.name} updateState={this.updateState}></SharePage>;
+      case 'end': return <SharePage domain={Constant.HOST + "http://oorga.co/fancywish?name="} quizId={this.getKey()} name={this.state.name} updateState={this.updateState} ></SharePage >;
       case 'user':
         return <UserPage questions={this.state.questions} updateState={this.updateState}></UserPage>;
       case 'result': return <Result></Result>;
