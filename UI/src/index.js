@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 ReactDOM.render(
     <div className="jumbotron start">
+        <h6><strong>2019 Friendship Dare!!!</strong></h6>
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={App} />
