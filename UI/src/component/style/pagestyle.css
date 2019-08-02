@@ -1,0 +1,23 @@
+.div{
+  text-align: center;
+  margin: auto;
+  max-width: 500px;
+}
+
+.numberLabel{
+  margin: 2px 2px;
+  background: grey;
+  color: white;
+  padding: 2px;
+}
+
+.highNumberLabel{
+  margin: 2px 2px;
+  background: pink;
+  color: white;
+  padding: 2px;
+}
+
+.skipButton{
+    margin: 5px;
+}
