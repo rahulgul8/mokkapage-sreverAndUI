@@ -1,5 +1,8 @@
 export const HOST = "https://us-central1-mokkapage.cloudfunctions.net/app";
 
+export const APP_HOST = "http://localhost:3000"
+
+export const count = 2;
 
 export function loadImages(questions) {
     questions.map((q) => {
