@@ -1,0 +1,54 @@
+
+.share{
+  text-align: center;
+  margin: 5px auto;
+  color: blue;
+  background: beige;
+  white-space: pre-line;
+}
+.input{
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  margin: 15px 5px;
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+  width: 90%;
+  max-width: 400px;
+  margin: 5px;
+}
+
+/* CHECKED STYLES */
+/* [type=radio]:checked + img {
+  outline: 2px solid #f00;
+} */
+
+.wrong {
+  outline: 2px solid #f00;
+}
+
+.right {
+  outline: 2px solid rgb(9, 255, 0);
+}
+
+
+.optionLabel{
+  margin: 10px auto;
+  width: 45%;
+  display: inline-block;
+}
+
+.optionsDiv{
+  text-align: center;
+  margin: 2% auto;
+}
