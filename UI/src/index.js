@@ -11,15 +11,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 ReactDOM.render(
-    <div className="jumbotron start">
-        <h6><strong>2019 Friendship Dare!!!</strong></h6>
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={App} />
-                <Route exact path="/result/:id" component={Result} />
-                <Route exact path="/quiz/:id" component={UserPage} />
-            </Switch>
-        </BrowserRouter></div>,
+    <div>
+        <div className="stickyHeader carrot"><img className="logo" src="/carrot_logo.png"></img><h2 className="title"><strong>FunCarrot.com</strong></h2></div>
+        <div className="jumbotron start">
+            <h6><strong>2019 Friendship Dare!!!</strong></h6>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={App} />
+                    <Route exact path="/result/:id" component={Result} />
+                    <Route exact path="/quiz/:id" component={UserPage} />
+                </Switch>
+            </BrowserRouter>
+        </div>
+    </div>,
     document.getElementById('root')
 );
 // If you want your app to work offline and load faster, you can change

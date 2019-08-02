@@ -37,7 +37,7 @@ export default class Result extends Component {
 
   getTable(rows) {
     var count = 0;
-    return (<div><button className="btn btn-primary" onClick={this.redirect.bind(this)}>Create your own quiz-></button><div className="tablediv"><table className="table table-striped">
+    return (<div><button className="btn btn-primary carrot" onClick={this.redirect.bind(this)}>Create your own quiz-></button><div className="tablediv"><table className="table table-striped">
       <thead>
         <tr>
           <th>Name</th>

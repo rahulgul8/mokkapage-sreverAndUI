@@ -40,7 +40,7 @@ export default class App extends Component {
       case 'start': this.setState({ page: "quiz", name: e.name }); break;
       case 'end':
         this.setState({ page: "wait", name: e.name })
-        Constant.updateServer(Constant.HOST + '/player/response/add', 'POST', { name: localStorage.getItem("name"), quiz: e.selectedQuestions })
+        Constant.updateServer(Constant.HOST + '/player/response/add', 'POST', { name: this.state.name, quiz: e.selectedQuestions })
           .then(resp => {
             console.log(resp);
             return resp.json();

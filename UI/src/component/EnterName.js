@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-
+import '../App.css'
 export default class EnterName extends Component {
 
     constructor() {
@@ -27,6 +26,6 @@ export default class EnterName extends Component {
     render() {
         return <div><span className="error">{this.state.error}</span>
             <input type="text" value={this.state.name} onChange={this.handleChange} className="form-control text" placeholder="Enter your name" aria-label="Username" aria-describedby="basic-addon1" />
-            <button className="btn btn-primary" onClick={this.updateState}>{this.props.buttonText}</button></div>;
+            <button className="carrot btn btn-primary" onClick={this.updateState}>{this.props.buttonText}</button></div>;
     }
 }

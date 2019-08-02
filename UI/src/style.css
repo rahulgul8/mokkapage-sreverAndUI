@@ -3,9 +3,19 @@ h1, p {
 }
 
 .start{
-  margin: 50px auto;
+  margin: 100px auto;
   max-width: 500px;
   padding: 50px 10px;
   min-height: 200px;
   text-align: center;
+}
+
+.stickyHeader{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.carrot{
+  background: rgb(237, 145, 33);
 }
