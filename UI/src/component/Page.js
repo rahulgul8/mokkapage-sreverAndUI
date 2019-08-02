@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Question from './Question';
-import './pagestyle.css';
+import './style/pagestyle.css';
+import * as Constant from '../constants';
 export default class Page extends Component {
 
   constructor(props) {
@@ -12,7 +13,7 @@ export default class Page extends Component {
     };
   }
 
-  count = 2;
+  count = Constant.count;
 
   render() {
     let label = [];
@@ -23,7 +24,6 @@ export default class Page extends Component {
     let currentQ = this.getQuestion();
     let questionHTML;
     if (currentQ) {
-      console.log('answer for' + this.state.currentQuestion + currentQ.answer);
       questionHTML = <Question type={this.props.type} answer={currentQ.answer} question={currentQ.question} options={currentQ.options} handleChange={(event) => this.handleChange(event)}></Question>;
     }
     return (
@@ -72,7 +72,7 @@ export default class Page extends Component {
       this.setState({ currentQuestion: this.state.currentQuestion + 1 });
     }
     else {
-      this.props.updateState({ page: 'end',score: this.state.correctAnswer });
+      this.props.updateState({ page: 'end', score: this.state.correctAnswer });
     }
   }
 
@@ -87,7 +87,7 @@ export default class Page extends Component {
 
   calculateUserResult(event) {
     if (event.result) {
-      this.setState({ correctAnswer: this.state.correctAnswer+1 });
+      this.setState({ correctAnswer: this.state.correctAnswer + 1 });
     }
   }
 }
