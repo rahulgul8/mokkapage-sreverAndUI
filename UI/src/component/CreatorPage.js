@@ -20,7 +20,7 @@ export default class CreatorPage extends Component {
   }
   render() {
     return (
-      <div>{this.props.name}
+            <div>Welcome <strong>{this.props.name} </strong>&#128075;
         <Page questions={this.props.questions} selectedQuestions={this.state.selectedQuestions} updateState={this.updateState} type="creator"></Page>
       </div>);
   }
