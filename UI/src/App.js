@@ -58,7 +58,7 @@ export default class App extends Component {
 
   getPage(page) {
     switch (page) {
-      case 'start': return <StartPage name={this.state.name} updateState={this.updateState} message="Enter your name and share your quiz with your friends"></StartPage>;
+      case 'start': return <StartPage name={this.state.name} updateState={this.updateState} message="Enter your name to Start"></StartPage>;
       case 'quiz': return <CreatorPage name={this.state.name} updateState={this.updateState} questions={this.state.questions}></CreatorPage>;
       case 'end': return <SharePage domain={Constant.APP_HOST + "/quiz/"} quizId={this.state.quizId} name={this.state.name} updateState={this.updateState} ></SharePage >;
       case 'wait': return <Wait></Wait>
