@@ -35,7 +35,7 @@ class Question extends Component {
     return (
       <form>
         <div>
-          <div>{this.props.question}</div>
+          <div><strong>{this.props.question}</strong></div>
           <Options type={this.props.type}
             value={this.props.answer}
             onChange={this.handleChange}
