@@ -14,7 +14,6 @@ ReactDOM.render(
     <div>
         <div className="stickyHeader carrot"><img className="logo" src="/carrot_logo.png"></img><h2 className="title"><strong>FunCarrot.com</strong></h2></div>
         <div className="jumbotron start">
-            <h6><strong>2019 Friendship Dare!!!</strong></h6>
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={App} />
