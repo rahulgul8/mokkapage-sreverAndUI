@@ -31,7 +31,7 @@ export default class Page extends Component {
         {label}
         <br />
         {this.props.type === "creator" && <button type="button" className="btn btn-primary carrot" onClick={() => { this.incrementSkippedQuestion() }}>Skip this question </button>}
-        {questionHTML}
+        <div className="questionAlign">{questionHTML}</div>
       </div>);
   }
 
