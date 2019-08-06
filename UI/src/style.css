@@ -3,7 +3,7 @@ h1, p {
 }
 
 .start{
-  margin: 100px auto;
+  margin: 10em auto;
   max-width: 500px;
   padding: 50px 10px;
   min-height: 200px;
@@ -14,6 +14,7 @@ h1, p {
   position: fixed;
   top: 0;
   width: 100%;
+  text-align: center;
 }
 
 .carrot{
