@@ -15,9 +15,9 @@ export default class Options extends Component {
     let div = options.map(option => (
       <label className="optionLabel" key={option.value}>
         <input type="radio" name="radio-button-group" {...option} onClick={this.handleChange} />
-        <img src={option.url} alt={option.url}/>
+        <img src={option.url} alt={"option " + option.value} className="img" />
         <br />
-        {option.value}
+        <strong>{option.value}</strong>
       </label>
     ));
 
