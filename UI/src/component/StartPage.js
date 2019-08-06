@@ -20,9 +20,10 @@ export default class StartPage extends Component {
   render() {
     return (
       <div>
+        <h3><strong>&#128075; 2019 Friendship Dare!!!</strong></h3>
         {this.props.message}
         <br />
-        <EnterName buttonText="Create quick Quiz -> " clickAction={this.updateState.bind(this)}></EnterName>
+        <EnterName buttonText="&#9996; Start &#9996;" clickAction={this.updateState.bind(this)}></EnterName>
       </div>)
   }
 
