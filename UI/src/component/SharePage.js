@@ -9,7 +9,7 @@ export default class SharePage extends Component {
       <div className="shareButtons">
         <a href={'whatsapp://send?text=' + url}>
           <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="Whatsapp" /></a>
-        <a href={"https://www.facebook.com/sharer/sharer.php?u=" + url} target="_blank" rel="noopener">
+        <a href={"https://www.facebook.com/sharer/sharer.php?u=" + url} target="_blank" rel="noopener noreferrer">
           <img src="https://img.icons8.com/color/48/000000/facebook-circled.png" alt="Share on Facebook" />
         </a>
       </div>
