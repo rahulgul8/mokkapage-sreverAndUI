@@ -15,7 +15,8 @@ export function loadImages(questions) {
         return q.options.map(o => o.url);
     }).reduce((a, b) => a.concat(b), []).forEach((q) => {
         console.log(q)
-        new Image().src = q;
+        const img = new Image();
+        img.src = q;
     }
     );
 }
