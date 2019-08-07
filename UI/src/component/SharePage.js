@@ -4,9 +4,9 @@ export default class SharePage extends Component {
 
   render() {
     return (<div>
-      <textarea className="form-control" defaultValue={this.props.domain + this.props.quizId}></textarea>
-      <a className="whatsapp" href={'whatsapp://send?text=' + encodeURI(this.props.domain + this.props.quizId)}>
-        <i className="fa fa-whatsapp whatsappButton"></i></a>
+      <div contentEditable='true' className="shareDiv">{this.props.domain + this.props.quizId}</div>
+      <a href={'whatsapp://send?text=' + encodeURI(this.props.domain + this.props.quizId)}>
+      <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="Whatsapp"/></a>
     </div >);
   }
 }

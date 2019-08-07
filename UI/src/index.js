@@ -12,8 +12,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 ReactDOM.render(
     <div>
-        <div className="stickyHeader carrot"><img className="logo" src="/carrot_logo.png"></img><h2 className="title"><strong>FunCarrot.com</strong></h2></div>
-        <div className="jumbotron start">
+        <div className="stickyHeader"><img alt="funcarrot logo" className="logo" src="/carrot_logo.png"></img><h2 className="title"><strong>FunCarrot.com</strong></h2></div>
+        <div className="start">
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={App} />
@@ -22,6 +22,8 @@ ReactDOM.render(
                 </Switch>
             </BrowserRouter>
         </div>
+        <div className="description">Enter your Name to Create your Quiz. Share it with your friends on Facebook or Whatsapp. Once your friends attempt the quiz you will see the results on leaderboard.</div>
+        <div className="stickyFooter">contact</div>
     </div>,
     document.getElementById('root')
 );

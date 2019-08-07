@@ -6,7 +6,7 @@ export default class StartPage extends Component {
 
   constructor(props) {
     super(props);
-    var name = localStorage.getItem("name");
+    var name = sessionStorage.getItem("name");
     this.state = {
       name: name,
     };
@@ -20,7 +20,7 @@ export default class StartPage extends Component {
   render() {
     return (
       <div>
-        <h3><strong>&#128075; 2019 Friendship Dare!!!</strong></h3>
+        <h3><strong><span role='img' aria-label='img'>&#128075;</span> 2019 Friendship Dare!!!</strong></h3>
         {this.props.message}
         <br />
         <EnterName buttonText="&#9996; Start &#9996;" clickAction={this.updateState.bind(this)}></EnterName>

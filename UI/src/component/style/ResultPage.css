@@ -7,3 +7,10 @@ table{
   width: 100%;
   background: white;
 }
+
+.result{
+  margin-top: 10px;
+}
+.createYourOwn{
+  margin-bottom: 8px; 
+}

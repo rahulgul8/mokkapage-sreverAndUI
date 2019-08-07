@@ -54,3 +54,11 @@
   width: 100px;
   height: 100px;
 }
+
+
+.shareDiv{
+  background: white;
+  border: rgb(182, 181, 181) 1px solid;
+  border-radius: 8px;
+  padding: 1em;
+}

@@ -43,16 +43,18 @@ exports.getPlayerQuiz = async function (id) {
     var ref = await db.collection("/userResponse").doc(id).get();
     if (ref.exists) {
         var data = ref.data();
-        return { "quiz": data.quiz, "name": data.name };
+        var responses = data.responses ? data.responses : [];
+        return { "quiz": data.quiz, "name": data.name, "responses": responses };
     } else {
-        return false;
+        return { "quiz": data.quiz, "name": data.name, "responses": responses };
     }
 }
 
 exports.getPlayerResult = async function (id) {
     var ref = await db.collection("/userResponse").doc(id).get();
     if (ref.exists) {
-        return ref.data().responses;
+        var responses = ref.data().responses ? ref.data().responses : [];
+        return responses;
     } else {
         return false;
     }
