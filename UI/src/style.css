@@ -4,30 +4,25 @@ h1, p {
 
 .start{
   margin: auto;
-  max-width: 50%;
+  width: 95%;
+  max-width: 900px;
   padding: 50px 10px;
   min-height: 200px;
   text-align: center;
-  margin-top: 4em;
-  margin-bottom: 0;
+  margin-top: 1em;
   background: rgb(194, 192, 192);
   border-radius: 2%;
 }
 
 
 .stickyHeader{
-  position: fixed;
-  top: 0;
   width: 100%;
   text-align: center;
-  height: 8%;
 }
 .stickyFooter{
-  position: fixed;
-  bottom: 0;
+  margin-top: 1%;
   width: 100%;
   text-align: center;
-  height: 8%;
 }
 
 .carrot{
@@ -42,3 +37,4 @@ h1, p {
   margin-top: 1px;
   padding: 10px;
 }
+
