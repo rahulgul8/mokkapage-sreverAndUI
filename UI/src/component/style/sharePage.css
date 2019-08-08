@@ -1,36 +1,67 @@
-.badgeC {
-    border: none;
-    margin-top: 40px;
-    margin-left: 40px;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-}
-
-.badgeC:before {
-    content: "";
-    width: 50px;
-    height: 50px;
-    display: block;
-    border-radius: 50%;
-    background: url("https://img.icons8.com/color/48/000000/copy-link.png") no-repeat;
-    background-color: rgb(73, 79, 82);
-    background-size: 30px 30px;
-    background-position: center center;
-    position: absolute;
-    top: -7px;
-    left: -7px;
-    cursor: pointer;
-}
-
-
-
-.badgeC.badge-bottom-right:before {
-    left: auto;
-    top: auto;
-    right: -7px;
-    bottom: -30px;
-}
-
 .shareButtons{
     margin-top: 1em;
+}
+
+#share {
+  	text-align: center;
+}
+
+/* buttons */
+
+#share a {
+	width: 50px;
+  	height: 50px;
+  	display: inline-block;
+  	margin: 8px;
+  	border-radius: 50%;
+  	font-size: 24px;
+  	color: #fff;
+	opacity: 0.75;
+	transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+	opacity: 1;
+}
+
+/* icons */
+
+#share i {
+  	position: relative;
+  	top: 50%;
+  	transform: translateY(-75%);
+}
+
+/* colors */
+
+.facebook {
+ 	background: #3b5998;
+}
+
+.whatsapp {
+    background: #25D366;
+}
+
+.facebook-messenger{
+    background: rgb(84, 181, 247);
+}
+
+.copy {
+    background: rgb(228, 125, 125);
+}
+
+.twitter {
+  	background: #55acee;
+}
+
+.googleplus {
+  	background: #dd4b39;
+}
+
+.linkedin {
+  	background: #0077b5;
+}
+
+.pinterest {
+  	background: #cb2027;
 }
