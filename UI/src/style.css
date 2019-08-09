@@ -9,9 +9,9 @@ h1, p {
   padding: 50px 10px;
   min-height: 200px;
   text-align: center;
-  margin-top: 1em;
-  background: rgb(194, 192, 192);
-  border-radius: 2%;
+  background: rgb(56, 56, 56);
+  border-radius: 5%;
+  color: white;
 }
 
 
@@ -20,9 +20,17 @@ h1, p {
   text-align: center;
 }
 .stickyFooter{
+  position: absolute;
+  bottom: 0;
   margin-top: 1%;
   width: 100%;
   text-align: center;
+}
+
+.stickyFooter a{
+  margin: 1em;
+  color: black;
+  font-style: oblique;
 }
 
 .carrot{
@@ -38,3 +46,11 @@ h1, p {
   padding: 10px;
 }
 
+.homeButton{
+  height: 2em;
+  width: 10em;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  cursor: pointer;
+}
