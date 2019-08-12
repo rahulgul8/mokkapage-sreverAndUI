@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ContactUs from './ContactUs';
 
 ReactDOM.render(
-    <div>
+      <div style={{ height: '100%', width: '100%' }}>
         <div className="stickyHeader"><img alt="funcarrot logo" className="logo" src="/carrot_logo.png"></img><h2 className="title"><strong>FunCarrot.com</strong></h2></div>
         <div className="start">
             <BrowserRouter>
