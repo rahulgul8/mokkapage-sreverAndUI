@@ -29,6 +29,7 @@ export default class App extends Component {
         .then(res => res.json())
         .then((data) => {
           console.log(data);
+          Constant.shuffleArray(data.quiz);
           this.setState({ questions: data.quiz });
           Constant.loadImages(data.quiz);
         })
