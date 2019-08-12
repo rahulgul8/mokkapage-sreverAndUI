@@ -13,7 +13,7 @@
 
 .highNumberLabel{
   margin: 2px 2px;
-  background: pink;
+  background: rgb(26, 25, 25);
   color: white;
   padding: 2px;
 }
@@ -23,5 +23,13 @@
 }
 
 .questionAlign{
-  margin-top: 2em;
+  margin-top: 0.5em;
+}
+
+.skipButton{
+  margin: 5px;
+}
+
+.questionLabel{
+  border: 1px solid white;
 }
