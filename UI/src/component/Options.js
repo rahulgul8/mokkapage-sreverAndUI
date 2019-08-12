@@ -15,7 +15,7 @@ export default class Options extends Component {
     let div = options.map(option => (
       <label className="optionLabel" key={option.value}>
         <input type="radio" name="radio-button-group" {...option} onClick={this.handleChange} />
-        <img src={option.url} alt={"option " + option.value} width="5%" height="5%"/>
+        <img id={option.value === this.props.value ? 'answer' : undefined} className="options" src={option.url} alt={"option " + option.value} width="200" height="200" />
         <br />
         <strong>{option.value}</strong>
       </label>
@@ -35,6 +35,7 @@ export default class Options extends Component {
 
   handleUserChange(e) {
     var className = "";
+    var answer = document.getElementById('answer');
     if (this.props.value === e.target.value) {
       className = "right";
       e.result = true;
@@ -42,11 +43,15 @@ export default class Options extends Component {
       className = "wrong";
       e.result = false;
     }
+    if(!e.result){
+      answer.classList.add('right');
+    }
     e.img = e.target.nextElementSibling;
     e.img.classList.add(className);
 
     setTimeout((e) => {
       e.img.classList.remove(className);
+      answer.classList.remove('right');
       this.props.onChange(e);
     }, 500, e)
   }
