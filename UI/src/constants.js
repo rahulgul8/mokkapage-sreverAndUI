@@ -2,7 +2,7 @@ export const HOST = "https://us-central1-mokkapage.cloudfunctions.net/app";
 
 export const APP_HOST = getHost();
 
-export const count = 2;
+export const count = 10;
 
 function getHost(){
     var url = window.location.href;
