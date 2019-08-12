@@ -6,10 +6,10 @@ h1, p {
   margin: auto;
   width: 95%;
   max-width: 900px;
-  padding: 50px 10px;
+  padding: 10px;
   min-height: 200px;
   text-align: center;
-  background: rgb(56, 56, 56);
+  background: rgb(56, 56, 56,0.3);
   border-radius: 5%;
   color: white;
 }
@@ -20,9 +20,6 @@ h1, p {
   text-align: center;
 }
 .stickyFooter{
-  position: absolute;
-  bottom: 0;
-  margin-top: 1%;
   width: 100%;
   text-align: center;
 }
