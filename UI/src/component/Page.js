@@ -19,7 +19,7 @@ export default class Page extends Component {
     let label = [];
 
     for (let i = 1; i <= this.count; i++) {
-      label.push(<label className={i === this.state.currentQuestion ? 'highNumberLabel' : 'numberLabel'} key={i} >{i}</label>);
+      label.push(<label className={(i === this.state.currentQuestion ? 'highNumberLabel' : 'numberLabel') + ' questionLabel'} key={i} >{i}</label>);
     }
     let currentQ = this.getQuestion();
     let questionHTML;
@@ -30,7 +30,7 @@ export default class Page extends Component {
       <div>
         {label}
         <br />
-        {this.props.type === "creator" && <button type="button" className="btn btn-primary carrot" onClick={() => { this.incrementSkippedQuestion() }}>Skip this question </button>}
+        {this.props.type === "creator" && <button type="button" className="skipButton btn btn-primary carrot" onClick={() => { this.incrementSkippedQuestion() }}>Skip this question </button>}
         <div className="questionAlign">{questionHTML}</div>
       </div>);
   }
