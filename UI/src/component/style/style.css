@@ -1,34 +1,10 @@
 
-.share{
-  text-align: center;
-  margin: 5px auto;
-  color: blue;
-  background: beige;
-  white-space: pre-line;
-}
-.input{
-  display: inline-block;
-  width: 20%;
-  text-align: center;
-  margin: 15px 5px;
-}
-
 [type=radio] { 
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
-
-/* IMAGE STYLES */
-[type=radio] + img {
-  cursor: pointer;
-  width: 90%;
-  max-width: 400px;
-  margin: 5px;
-}
-
-
 
 .wrong {
   outline: 6px solid #f00;
@@ -45,16 +21,6 @@
   display: inline-block;
 }
 
-.optionsDiv{
-  text-align: center;
-  margin: 2% auto;
-}
-
-.img{
-  width: 100px;
-  height: 100px;
-}
-
 
 .shareDiv{
   background: white;
@@ -62,4 +28,11 @@
   border-radius: 8px;
   padding: 1em;
   color: black;
+}
+
+.options{
+  border-radius: 2px;
+  border: 2px solid white;
+  cursor: pointer;
+  width: 97%;
 }
