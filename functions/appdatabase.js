@@ -1,7 +1,6 @@
 
 const admin = require('firebase-admin');
-admin.initializeApp(functions.config().firebase);
-// admin.initializeApp({ credential: admin.credential.cert(serviceAccount), });
+admin.initializeApp();
 const db = admin.firestore();
 
 exports.getQuestions = async function (lang) {
