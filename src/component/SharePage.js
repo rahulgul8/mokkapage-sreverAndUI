@@ -18,7 +18,7 @@ export default class SharePage extends Component {
 
         <a className="linkedin" href={"https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + title} target="blank"><i className="fa fa-linkedin"></i></a>
 
-        <a className="copy" href='javascript:;' onClick={this.copy.bind(this)}><i className="fa fa-copy"></i></a>
+        <button className="copy" onClick={this.copy.bind(this)}><i className="fa fa-copy"></i></button>
       </div>
     </div >);
   }
