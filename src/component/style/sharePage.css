@@ -8,7 +8,7 @@
 
 /* buttons */
 
-#share a {
+#share a,button {
 	width: 50px;
   	height: 50px;
   	display: inline-block;
@@ -20,13 +20,13 @@
 	transition: opacity 0.15s linear;
 }
 
-#share a:hover {
+#share a:hover,button:hover {
 	opacity: 1;
 }
 
 /* icons */
 
-#share i {
+#share a i {
   	position: relative;
   	top: 50%;
   	transform: translateY(-75%);
@@ -47,7 +47,12 @@
 }
 
 .copy {
-    background: rgb(228, 125, 125);
+	position: relative;
+	top: 7px;
+	background: rgb(248, 93, 93);
+	border: 1px solid rgb(248, 93, 93);
+	text-decoration: none;
+	display: inline-block;
 }
 
 .twitter {
