@@ -1,8 +1,7 @@
 
 const admin = require('firebase-admin');
-const serviceAccount = require('./mokka.json');
-// admin.initializeApp(functions.config().firebase);
-admin.initializeApp({ credential: admin.credential.cert(serviceAccount), });
+admin.initializeApp(functions.config().firebase);
+// admin.initializeApp({ credential: admin.credential.cert(serviceAccount), });
 const db = admin.firestore();
 
 exports.getQuestions = async function (lang) {
