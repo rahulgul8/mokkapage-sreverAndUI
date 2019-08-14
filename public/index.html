@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#000000" />
   <link async rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     media="all">
-  
+
   <link async rel="stylesheet" href="/animations.css" media="all">
   <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -37,21 +37,50 @@
       enable_page_level_ads: true
     });
   </script>
-  
+
+  <style>
+    iframe {
+      margin: 10px auto;
+      width: 320px;
+      display: block;
+      max-width: 99%;
+    }
+  </style>
 </head>
 
 <body>
-  <noscript>This App needs Javascript to function properly</noscript>
+  <noscript>FunCarrot.com A Fun place to know what your friends think about YOU. It needs Javascript to function properly</noscript>
   <div id="root"></div>
   <canvas id="c" class="colors"></canvas>
   <script async src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
   <script async src="%PUBLIC_URL%/animations.js"></script>
   <script>
-      window.onload = function () {
-        animate();
-      };
-    </script>
-  <script type="text/javascript"> var infolinks_pid = 3201835; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+    window.onload = function () {
+      animate();
+    };
+  </script>
+  <script type="text/javascript">
+    atOptions = {
+      'key': '6af3013d38c5035e7f9e083fc095af7f',
+      'format': 'iframe',
+      'height': 50,
+      'width': 320,
+      'params': {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bcloudhost.com/6af3013d38c5035e7f9e083fc095af7f/invoke.js"></scr' + 'ipt>');
+  </script>
+  <script type="text/javascript">
+    atOptions = {
+      'key': 'cb5c5ebbb34a3d640a9e24728351d177',
+      'format': 'iframe',
+      'height': 60,
+      'width': 468,
+      'params': {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bcloudhost.com/cb5c5ebbb34a3d640a9e24728351d177/invoke.js"></scr' + 'ipt>');
+  </script>
+  <div class="stickyFooter"><a href="/privacypolicy">Privacy Policy</a> <a href="/contactus">Contact us</a><a
+      href="/disclaimer">Disclaimer</a></div>
 </body>
 
 </html>
