@@ -28,7 +28,6 @@ export default class App extends Component {
       fetch(Constant.HOST + '/getquestions')
         .then(res => res.json())
         .then((data) => {
-          console.log(data);
           Constant.shuffleArray(data.quiz);
           this.setState({ questions: data.quiz });
           Constant.loadImages(data.quiz);
@@ -38,7 +37,6 @@ export default class App extends Component {
   }
 
   updateState = (e) => {
-    console.log(e)
     let page = e.page;
 
     switch (page) {
@@ -50,13 +48,11 @@ export default class App extends Component {
         this.setState({ page: "wait", name: e.name })
         Constant.updateServer(Constant.HOST + '/player/response/add', 'POST', { name: this.state.name, quiz: e.selectedQuestions })
           .then(resp => {
-            console.log(resp);
             return resp.json();
           })
           .then((response) => {
             this.setState({ quizId: response.id, page: "end" });
             sessionStorage.setItem('quizId', response.id);
-            console.log(response.id);
           });
         ; break;
       default: throw new Error();
@@ -74,6 +70,7 @@ export default class App extends Component {
         return (<div>
           <SharePage domain={Constant.APP_HOST + "/quiz/"} quizId={this.state.quizId} name={this.state.name} updateState={this.updateState} title={title}></SharePage >
           <br />
+          <div>Check your Results once your friends answer the Quiz. Go on share them the above link!!</div>
           Who knows <strong>{sessionStorage.getItem('name')}</strong> best?
         <Result id={this.state.quizId}></Result>
         </div>);
