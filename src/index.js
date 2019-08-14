@@ -24,7 +24,6 @@ ReactDOM.render(
             </BrowserRouter>
         </div>
         <div className="description">Enter your Name to Create your Quiz. Share it with your friends on Facebook or Whatsapp. Once your friends attempt the quiz you will see the results on leaderboard.</div>
-        <div className="stickyFooter"><a href="/privacypolicy">Privacy Policy</a> <a href="/contactus">Contact us</a><a href="/disclaimer">Disclaimer</a></div>
     </div>,
     document.getElementById('root')
 );
