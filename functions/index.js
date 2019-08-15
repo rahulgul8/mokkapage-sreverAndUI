@@ -9,6 +9,7 @@ funapp.use(cors());
 
 funapp.get('/getquestions', async (req, res) => {
     var result = await dao.getQuestions(req.query.lang);
+    res.set('Cache-Control', 'public, max-age=1800, s-maxage=1800');
     res.send(result);
 });
 
@@ -26,6 +27,7 @@ funapp.post('/player/response/add', async (req, res) => {
 funapp.get('/player/response/get', async (req, res) => {
     var id = req.query.id;
     var result = await dao.getPlayerQuiz(id);
+    res.set('Cache-Control', 'public, max-age=172800, s-maxage=172800');
     res.send(result);
 });
 
