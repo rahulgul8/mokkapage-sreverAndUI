@@ -10,4 +10,4 @@ after_success:
   - firebase deploy --only hosting --token $FIREBASE_TOKEN
 branches:
   only:
-  - master
+  - prod
