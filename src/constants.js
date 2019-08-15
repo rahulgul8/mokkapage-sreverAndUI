@@ -4,6 +4,8 @@ export const APP_HOST = getHost();
 
 export const count = 10;
 
+var alltheBloodyImages=[];
+
 function getHost(){
     var url = window.location.href;
     var arr = url.split("/");
@@ -14,9 +16,9 @@ export function loadImages(questions) {
     questions.map((q) => {
         return q.options.map(o => o.url);
     }).reduce((a, b) => a.concat(b), []).forEach((q) => {
-        console.log(q)
         const img = new Image();
         img.src = q;
+        alltheBloodyImages.push(img);
     }
     );
 }
