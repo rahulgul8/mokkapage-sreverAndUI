@@ -6,7 +6,6 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
 }
 
 function animate() {
-    console.log(isMobile)
     clickBackground();
     animateBody();
 }

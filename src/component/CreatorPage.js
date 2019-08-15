@@ -14,7 +14,6 @@ export default class CreatorPage extends Component {
   }
 
   updateState = (e) => {
-    console.log(this.state.selectedQuestions);
     e.selectedQuestions = this.state.selectedQuestions;
     this.props.updateState(e);
   }
