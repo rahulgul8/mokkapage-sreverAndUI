@@ -54,7 +54,7 @@ export default class UserPage extends Component {
       .then(res => res.json())
       .then((data) => {
         console.log(data);
-        var alreadyCompleted = sessionStorage.getItem(this.props.match.params.id);
+        var alreadyCompleted = localStorage.getItem(this.props.match.params.id);
         var page = 'start';
         if (alreadyCompleted === 'true') {
           page = 'end';
@@ -87,7 +87,7 @@ export default class UserPage extends Component {
           .then((response) => {
             console.log(response);
             this.setState({ page: 'end', responses: response })
-            sessionStorage.setItem(this.props.match.params.id, 'true');
+            localStorage.setItem(this.props.match.params.id, 'true');
           });
         ; break;
       default: throw new Error();
