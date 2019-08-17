@@ -7,7 +7,7 @@ export default class SharePage extends Component {
     var title = encodeURI(this.props.title + " ");
     return (<div><h5>Your Quiz is ready!! <br />Share this URL with your friends and see who knows you best.</h5>
       <div id="shareUrl" contentEditable='true' className="shareDiv" onClick={this.copy.bind(this)}><strong>{this.props.domain + this.props.quizId}</strong></div>
-      <button className="whatsappStatus btn btn-primary">Whatsapp Status</button>
+      <a  className="whatsappStatus btn btn-primary" href={'https://api.whatsapp.com/send?text=' + title + url}>Whatsapp Status</a >
       <div id='share'>
         <a className="whatsapp" href={'https://api.whatsapp.com/send?text=' + title + url}><i className="fa fa-whatsapp"></i></a>
 
