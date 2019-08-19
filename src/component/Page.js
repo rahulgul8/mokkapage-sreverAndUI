@@ -40,6 +40,7 @@ export default class Page extends Component {
   }
 
   handleChange(event) {
+    window.reloadAds();
     if (this.props.type === "user") {
       this.handleUserChange(event);
     }
