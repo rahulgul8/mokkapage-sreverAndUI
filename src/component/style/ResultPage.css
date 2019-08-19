@@ -1,0 +1,16 @@
+.tablediv{
+  text-align: center;
+}
+
+table{
+  margin:auto;
+  width: 100%;
+  background: white;
+}
+
+.result{
+  margin-top: 10px;
+}
+.createYourOwn{
+  margin-bottom: 8px; 
+}

@@ -1,0 +1,47 @@
+body {
+    background: #FCBC0F;
+    margin: 20px;
+}
+
+.stickyHeader {
+    width: 100%;
+    text-align: center;
+}
+
+.carrot {
+    background: rgb(237, 145, 33);
+}
+
+
+.stickyHeader{
+    width: 100%;
+    text-align: center;
+  }
+  .stickyFooter{
+   text-align: center;
+  }
+  
+  .carrot{
+    background: rgb(237, 145, 33);
+  }
+
+  
+.logo{
+    height: 4em;  
+    margin-right: 15px;
+  }
+  
+.stickyFooter a{
+    margin: 1em;
+    color: black;
+    font-style: oblique;
+}
+
+.homeButton{
+    height: 2em;
+    width: 10em;
+    color: white;
+    background: black;
+    padding: 10px;
+    cursor: pointer;
+}

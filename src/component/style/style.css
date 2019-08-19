@@ -1,0 +1,42 @@
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.wrong {
+  outline: 6px solid #f00;
+}
+
+.right {
+  outline: 6px solid rgb(20, 224, 13);
+}
+
+
+.optionLabel{
+  margin: 10px auto;
+  width: 45%;
+  display: inline-block;
+}
+
+
+.shareDiv{
+  background: white;
+  border: rgb(182, 181, 181) 1px solid;
+  border-radius: 8px;
+  padding: 1em;
+  color: black;
+}
+
+.options{
+  border-radius: 2px;
+  border: 2px solid white;
+  cursor: pointer;
+  width: 97%;
+}
+
+.questionSentence{
+  
+}
