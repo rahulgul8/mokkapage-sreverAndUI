@@ -19,11 +19,12 @@ function loadAds() {
         addScript("//p362977.clksite.com/adServe/banners?tid=362977_711293_0&type=footer&size=22", "rhFooter", "rhFooterDiv");
         addScript("//p362977.clksite.com/adServe/banners?tid=362977_711293_3&type=floating_banner&size=6&side=right&position=bottom", "rhFloatingDiv");
         isAdLoaded = true;
+        addScript("//p362977.clksite.com/adServe/banners?tid=362977_711293_1", "rhBanner", "rhBannerDiv");
     }
-    addScript("//p362977.clksite.com/adServe/banners?tid=362977_711293_1", "rhBanner", "rhBannerDiv");
+    
 }
 
-var isAdLoaded = false;
+var isAdLoaded = true;
 
 function removeAds() {
     removeChildren("rhBannerDiv");
