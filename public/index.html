@@ -71,21 +71,23 @@
     properly</noscript>
   <div id="root"></div>
   <canvas id="c" class="colors"></canvas>
-  <script async src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
-  <script async src="%PUBLIC_URL%/animations.js"></script>
-  <script>
-    window.onload = function () {
-      animate();
-    };
-  </script>
+
   <div class="stickyFooter"><a href="/privacypolicy">Privacy Policy</a> <a href="/contactus">Contact us</a><a
       href="/disclaimer">Disclaimer</a></div>
 
-  <script async type='text/javascript'
-    src='//p362977.clksite.com/adServe/banners?tid=362977_711293_3&type=floating_banner&size=6&side=right&position=bottom'></script>
+  <div class="advertisement" id="rhBannerDiv">
+  </div>
+  <div id="adsterraAdDiv">
+  </div>
+  <div id="rhFloatingDiv">
+  </div>
+  <div id="rhFooterDiv">
+  </div>
+
   <link async rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     media="all">
   <script async type="text/javascript">
+    //Adsterra
     atOptions = {
       'key': 'cb5c5ebbb34a3d640a9e24728351d177',
       'format': 'iframe',
@@ -93,15 +95,17 @@
       'width': 468,
       'params': {}
     };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bcloudhost.com/cb5c5ebbb34a3d640a9e24728351d177/invoke.js"></scr' + 'ipt>');
   </script>
-  <div class="advertisement">
-    <script async data-cfasync='false' type='text/javascript'
-      src='//p362977.clksite.com/adServe/banners?tid=362977_711293_1'></script>
-  </div>
-  <script async data-cfasync='false' type='text/javascript'
-    src='//p362977.clksite.com/adServe/banners?tid=362977_711293_0&type=footer&size=22'></script>
   <link async rel="stylesheet" href="/animations.css" media="all">
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
+  <script async src="%PUBLIC_URL%/animations.js"></script>
+  <script async src="%PUBLIC_URL%/ads.js"></script>
+  <script>
+    window.onload = function () {
+      animate();
+      loadAds();
+    };
+  </script>
 </body>
 
 </html>
