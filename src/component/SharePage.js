@@ -11,9 +11,9 @@ export default class SharePage extends Component {
       <div id='share'>
         <a className="whatsapp" href={'https://api.whatsapp.com/send?text=' + title + url}><i className="fa fa-whatsapp"></i></a>
 
-        <a className="facebook" href={"https://www.facebook.com/share.php?u=" + url + "&title=" + title} target="blank"><i className="fa fa-facebook"></i></a>
+        
 
-        {/* <a className="facebook-messenger" href={"fb-messenger://share/?link=" + url + "&app_id=123456789"}><i className="fab fa-facebook-messenger"></i></a> */}
+        {/*<a className="facebook" href={"https://www.facebook.com/share.php?u=" + url + "&title=" + title} target="blank"><i className="fa fa-facebook"></i></a>  <a className="facebook-messenger" href={"fb-messenger://share/?link=" + url + "&app_id=123456789"}><i className="fab fa-facebook-messenger"></i></a> */}
 
         <a className="twitter" href={"https://twitter.com/intent/tweet?status=" + title + " +" + url} target="blank"><i className="fa fa-twitter"></i></a>
 
